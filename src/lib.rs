@@ -355,10 +355,10 @@ fn construct_traced_block(
     parse_quote! {{
         #printer(#entering_format, "", #(#arg_idents,)* depth = DEPTH.with(|d| d.get()));
         #pause_stmt
-        DEPTH.with(|d| d.set(d.get() + 1));
+        DEPTH.with(|d| d.set(d.get() + 2));
         let mut fn_closure = move || #original_block;
         let fn_return_value = fn_closure();
-        DEPTH.with(|d| d.set(d.get() - 1));
+        DEPTH.with(|d| d.set(d.get() - 2));
         #printer(#exiting_format, "", fn_return_value, depth = DEPTH.with(|d| d.get()));
         #pause_stmt
         fn_return_value
