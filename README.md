@@ -15,7 +15,7 @@ See the [`examples`](examples/) directory and the [documentation](https://docs.r
 Add it as a dependency in your `Cargo.toml` file:
 ```
 [dependencies]
-trace = "*"
+trace = "1.0.1"
 ```
 
 ## Example
@@ -37,7 +37,6 @@ fn foo(a: i32, b: i32) {
 
 #[trace(prefix_enter="[ENTER]", prefix_exit="[EXIT]")]
 fn bar((a, b): (i32, i32)) -> i32 {
-    println!("I'm in bar!");
     if a == 1 {
         2
     } else {
@@ -49,9 +48,7 @@ fn bar((a, b): (i32, i32)) -> i32 {
 Output:
 ```
 [+] Entering foo(a = 1, b = 2)
-I'm in foo!
- [ENTER] Entering bar(a = 1, b = 2)
-I'm in bar!
- [EXIT] Exiting bar = 2
+  [ENTER] Entering bar(a = 1, b = 2)
+  [EXIT] Exiting bar = 2
 [-] Exiting foo = ()
 ```
