@@ -1,9 +1,9 @@
 extern crate env_logger;
 extern crate log;
 
-use trace::trace;
+use func_trace::trace;
 
-trace::init_depth_var!();
+func_trace::init_depth_var!();
 
 fn main() {
     env_logger::init();

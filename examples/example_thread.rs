@@ -1,8 +1,8 @@
 use std::thread;
 use std::time::Duration;
-use trace::trace;
+use func_trace::trace;
 
-trace::init_depth_var!();
+func_trace::init_depth_var!();
 
 fn main() {
     let handle = thread::spawn(|| {

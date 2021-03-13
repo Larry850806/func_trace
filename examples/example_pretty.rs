@@ -1,6 +1,6 @@
-use trace::trace;
+use func_trace::trace;
 
-trace::init_depth_var!();
+func_trace::init_depth_var!();
 
 fn main() {
     foo(Foo("Foo".to_string()));

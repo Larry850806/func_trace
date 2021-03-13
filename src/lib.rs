@@ -21,9 +21,9 @@
 //! See the examples in `examples/`. You can run the following example with
 //! `cargo run --example example_prefix`.
 //! ```
-//! use trace::trace;
+//! use func_trace::trace;
 //!
-//! trace::init_depth_var!();
+//! func_trace::init_depth_var!();
 //!
 //! fn main() {
 //!     foo(1, 2);
@@ -56,9 +56,9 @@
 //! [-] Exiting foo = ()
 //! ```
 //!
-//! Note the convenience [`trace::init_depth_var!()`](macro@init_depth_var) macro which declares and
+//! Note the convenience [`func_trace::init_depth_var!()`](macro@init_depth_var) macro which declares and
 //! initializes the thread-local `DEPTH` variable that is used for indenting the output. Calling
-//! `trace::init_depth_var!()` is equivalent to writing:
+//! `func_trace::init_depth_var!()` is equivalent to writing:
 //! ```
 //! use std::cell::Cell;
 //!

@@ -1,5 +1,5 @@
 use std::cell::Cell;
-use trace::trace;
+use func_trace::trace;
 
 thread_local! {
     static DEPTH: Cell<usize> = Cell::new(0);

@@ -10,7 +10,7 @@
 // #![feature(custom_inner_attributes)]
 // #![trace]
 
-// use trace::trace;
+// use func_trace::trace;
 
 // fn main() {
 //     foo::foo();

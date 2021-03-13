@@ -15,15 +15,15 @@ See the [`examples`](examples/) directory and the [documentation](https://docs.r
 Add it as a dependency in your `Cargo.toml` file:
 ```
 [dependencies]
-trace = "1.0.1"
+func_trace = "1.0.2"
 ```
 
 ## Example
 
 ```
-use trace::trace;
+use func_trace::trace;
 
-trace::init_depth_var!();
+func_trace::init_depth_var!();
 
 fn main() {
     foo(1, 2);
