@@ -26,30 +26,30 @@ use func_trace::trace;
 
 func_trace::init_depth_var!();
 
-fn main() {
-    foo(1, 2);
-}
-
 #[trace]
-fn foo(a: i32, b: i32) {
-    println!("I'm in foo!");
-    bar((a, b));
+fn fib(n: u32) -> u32 {
+    match n {
+        1 => 1,
+        2 => 1,
+        _ => fib(n - 1) + fib(n - 2),
+    }
 }
 
-#[trace(prefix_enter="[ENTER]", prefix_exit="[EXIT]")]
-fn bar((a, b): (i32, i32)) -> i32 {
-    if a == 1 {
-        2
-    } else {
-        b
-    }
+fn main() {
+    fib(4);
 }
 ```
 
 Output:
 ```
-[+] Entering foo(a = 1, b = 2)
-  [ENTER] Entering bar(a = 1, b = 2)
-  [EXIT] Exiting bar = 2
-[-] Exiting foo = ()
+[+] Entering fib(n = 4)
+  [+] Entering fib(n = 3)
+    [+] Entering fib(n = 2)
+    [-] Exiting fib = 1
+    [+] Entering fib(n = 1)
+    [-] Exiting fib = 1
+  [-] Exiting fib = 2
+  [+] Entering fib(n = 2)
+  [-] Exiting fib = 1
+[-] Exiting fib = 3
 ```
