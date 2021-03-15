@@ -1,6 +1,6 @@
 [package]
 name = "func_trace"
-version = "1.0.2"
+version = "1.0.3"
 authors = ["Larry Lu <pudding850806@gmail.com>"]
 repository = "https://github.com/Larry850806/func_trace"
 license = "MIT"

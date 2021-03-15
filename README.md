@@ -13,9 +13,10 @@ See the [`examples`](examples/) directory and the [documentation](https://docs.r
 ## Installation
 
 Add it as a dependency in your `Cargo.toml` file:
+
 ```toml
 [dependencies]
-func_trace = "1.0.2"
+func_trace = "^1.0.3"
 ```
 
 ## Example
